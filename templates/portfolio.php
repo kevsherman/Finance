@@ -2,7 +2,7 @@
 /*
 //  This page shows the current users stock portolio 
 //
-//  Variables are passed in from index.php via $users, which called all db rows for the user:
+//  Variables are passed in from index.php via $user, which called all db rows for the user:
 //  Eg:
 //            Array
 //                    (
@@ -42,4 +42,10 @@
     <a href="quote.php">Seach Stocks by Symbol </a>
 <div>
     <a href="logout.php">Log Out</a>
+</div>
+<div>
+    <a href="sell.php">Sell Stocks</a>
+</div>
+<div>
+    <a href="buy.php">Buy Stocks</a>
 </div>
