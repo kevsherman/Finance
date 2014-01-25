@@ -32,3 +32,11 @@
     /* surround with whitespace */
     margin: 20px;
 }
+ h1{
+    font-size: 6em;
+ }
+
+    a:link {text-decoration:none;}
+    a:visited {text-decoration:none;}
+    a:hover {text-decoration:underline;}
+    a:active {text-decoration:underline;}

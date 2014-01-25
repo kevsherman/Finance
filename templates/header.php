@@ -14,6 +14,10 @@
             <title>C$50 Finance</title>
         <?php endif ?>
 
+        <?php if($title == "Log In"): ?>
+            <link href="css/home.css" rel="stylesheet" />
+        <?php endif ?>
+
         <script src="js/jquery-1.10.2.min.js"></script>
         <script src="js/bootstrap.min.js"></script>
         <script src="js/scripts.js"></script>
@@ -25,7 +29,7 @@
         <div class="container">
 
             <div id="top">
-                <a href="/"><img alt="C$50 Finance" src="img/logo.gif"/></a>
+                <a href="index.php"><h1>Wallstreet Hacker</h1></a>
             </div>
 
             <div id="middle">
