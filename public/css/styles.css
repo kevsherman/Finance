@@ -36,7 +36,8 @@
     font-size: 6em;
  }
 
-    a:link {text-decoration:none;}
+    a:link {text-decoration:none; color:black;}
     a:visited {text-decoration:none;}
-    a:hover {text-decoration:underline;}
+    a:hover {text-decoration:underline; color:black;}
     a:active {text-decoration:underline;}
+

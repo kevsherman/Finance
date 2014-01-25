@@ -14,7 +14,8 @@
             <title>C$50 Finance</title>
         <?php endif ?>
 
-        <?php if($title == "Log In"): ?>
+        <!-- Suppressed notice that 'title is undefined' */ -->
+        <?php if(@$title == "Log In"): ?>
             <link href="css/home.css" rel="stylesheet" />
         <?php endif ?>
 
