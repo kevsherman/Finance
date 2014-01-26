@@ -29,10 +29,10 @@
         <?php foreach ($positions as $position): ?>
 
             <tr>
-                <td><?= $position["symbol"] ?></td>
-                <td><?= $position["shares"] ?></td>
-                <td><?= $position["price"] ?></td>
-            </tr>
+                <td><strong>Company:</strong><?= $position["symbol"] ?></td>
+                <td><strong>Shares Held: </strong><?= $position["shares"] ?></td>
+                <td><strong>Share Price:</strong><?= $position["price"] ?></td>
+            </tr></br>
 
         <? endforeach ?>
 
