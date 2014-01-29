@@ -7,6 +7,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
         //What stock are they buying?
         $stock = $_POST["symbol"];
+       
+        //send to all uppercase
+        $stock = strtoupper($stock);
+
+        //get the stock details from Yahoo
+        $stockdetail = lookup("$stock");
+
+        //check if valid symbol
+        if($stockdetail == false){
+            apologize("Please provide a valid symbol");
+        }
 
         //How many shares are they buying?
         $amt = $_POST["amt"];
@@ -22,7 +33,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
         }
 
         //Whats the total cost of stocks
-        $stockdetail = lookup("$stock");
         $cost = $stockdetail["price"] * $amt;
 
         //get cash balance from DB
@@ -41,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 
         //add new stocks to portfolio.  If row exisits, UPDATE; if not, INSERT
 
-        query("INSERT INTO stocks (id, symbol, shares) VALUES(?, ?, ?) ON DUPLICATE KEY UPDATE shares = shares + VALUES(shares)", $_SESSION["id"], $_POST["symbol"], $_POST["amt"]);
+        query("INSERT INTO stocks (id, symbol, shares) VALUES(?, ?, ?) ON DUPLICATE KEY UPDATE shares = shares + VALUES(shares)", $_SESSION["id"], $stock, $_POST["amt"]);
 
         //when buy complete, redirect to index
         redirect("index.php");

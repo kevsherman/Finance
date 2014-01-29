@@ -11,12 +11,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //How many shares are they selling?
         $amt = $_POST["amt"];
 
-        //How many shares do they have currently
+        //How many shares do they have currently?
         $shares = query("SELECT shares FROM stocks WHERE id = ? AND symbol = ?", $_SESSION["id"], $_POST["symbol"]);
 
-        //if amount the want to sell is more than they have, apologize
+        //if amount they want to sell is more than they have, apologize
         if($shares <= $amt){
-            render("apologize", "sorry, you dont have that many shares");
+            render("apologize.php", "sorry, you dont have that many shares");
         }
 
         //What is the sale value? (current stock price * amount of shares to sell)
