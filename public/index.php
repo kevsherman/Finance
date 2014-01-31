@@ -23,8 +23,12 @@
                     "shares" => $row["shares"],
                     "symbol" => $row["symbol"]
                 ];
-            }
+            }  
+
         }
+
+    // Calculate total value of portfolio
+      
 
     // render portfolio and pass in $user Array which contains all the users data and $positions Array which contains the stock holdings data
     render("portfolio.php", [ "title" => "Portfolio", "user" => $user, "positions" => $positions]);

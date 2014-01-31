@@ -29,6 +29,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //remove sold stocks from portfolio
         query("UPDATE stocks SET shares = shares - ? WHERE id = ? AND symbol = ?", $amt, $_SESSION["id"], $_POST["symbol"]);
 
+        //find new stock total
+        $newshares = query("SELECT shares FROM stocks WHERE id = ? AND symbol =?", $_SESSION["id"], $_POST["symbol"]);
+
+        //if new stock total == 0, delete the row
+            if($newshares == 0){
+                query("DELETE FROM stocks WHERE id = ? AND symbol = ?", $_SESSION["id"], $_POST["symbol"]);
+            }
+
         //redirect back to index.php
         redirect("index.php");
 

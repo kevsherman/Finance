@@ -26,15 +26,21 @@
     <li>Available Cash: <?= $user[0]["cash"] ?></li>
     <li><h2>Current Stocks</h2></li>
 
-        <?php foreach ($positions as $position): ?>
-
+        <table class="table">
             <tr>
-                <td><strong>Company:</strong><?= $position["symbol"] ?></td>
-                <td><strong>Shares Held: </strong><?= $position["shares"] ?></td>
-                <td><strong>Share Price:</strong><?= $position["price"] ?></td>
-            </tr></br>
+                <td><strong>Company</strong></td>
+                <td><strong>Shares Held</strong></td>
+                <td><strong>Share Price</strong></td>
+            </tr>
 
+        <?php foreach ($positions as $position): ?>
+            <tr>
+                <td><?= $position["symbol"] ?></td>
+                <td><?= $position["shares"] ?></td>
+                <td><?= $position["price"] ?></td>
+            </tr>
         <? endforeach ?>
+          </table>
 
 </ul>
 
