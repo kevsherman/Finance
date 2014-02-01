@@ -27,10 +27,19 @@
 
         }
 
-    // Calculate total value of portfolio
-      
+    // Calculate value of each stock holding (shares * price)
+     $values = [];   
+    foreach($positions as $position){
+            $values[] = ["value" => $position["price"] * $position["shares"] ];
+     }
+
+      //find total value of portfolio
+     $totalvalue = 0;
+     foreach($positions as $position){
+            $totalvalue = $totalvalue + $position["price"] * $position["shares"];
+     }
 
     // render portfolio and pass in $user Array which contains all the users data and $positions Array which contains the stock holdings data
-    render("portfolio.php", [ "title" => "Portfolio", "user" => $user, "positions" => $positions]);
+    render("portfolio.php", [ "title" => "Portfolio", "user" => $user, "positions" => $positions, "values" => $values, "totalvalue" => $totalvalue]) ;
 
 ?>

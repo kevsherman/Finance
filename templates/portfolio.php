@@ -18,13 +18,11 @@
 //
 /////////////////////////////////////////////////////////////////////////////////////////*/ ?>
 
-<div>
+<div id="welcome">
     <h2>Welcome <?= $user[0]["username"] ?> </h2>
 </div>
 
-<ul>
-    <li>Available Cash: <?= $user[0]["cash"] ?></li>
-    <li><h2>Current Stocks</h2></li>
+<h2>Current Portfolio</h2>
 
         <table class="table">
             <tr>
@@ -37,10 +35,34 @@
             <tr>
                 <td><?= $position["symbol"] ?></td>
                 <td><?= $position["shares"] ?></td>
-                <td><?= $position["price"] ?></td>
+                <td>$<?= $position["price"] ?></td>
             </tr>
-        <? endforeach ?>
-          </table>
+        <? endforeach ?>   
+            <tr>
+                <td><strong>Total Securities</strong></td>
+                <td> - </td>
+                <td><strong>$<?= $totalvalue ?></strong></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Cash ($CAN)</td>
+                <td> - </td>
+                <td>$<?= $user[0]["cash"] ?></td>
+            </tr>
+             
+            <tr>
+                <td><strong>Total Account Holdings</td>
+                <td> - </td>
+                <td><strong>$<?= $totalvalue + $user[0]["cash"]; ?></strong></td>
+            </tr>
+             
+        </table>
 
-</ul>
+
+
+
 

@@ -203,13 +203,20 @@
             extract($values);
 
             // render header
-            require("../templates/header.php");
+            require("../templates/header.php");  
+
+            // render navbar, unless login or register pages
+            if($_SERVER["PHP_SELF"] !== "/Finance/public/login.php" && $_SERVER["PHP_SELF"] !== "/Finance/public/register.php"){
+            require("../templates/navbar.php");
+            }
 
             // render template
             require("../templates/$template");
 
-            // render footer
+            // render footer, unless login page
+            if($_SERVER["PHP_SELF"] !== "/Finance/public/login.php"){
             require("../templates/footer.php");
+            }
         }
 
         // else err

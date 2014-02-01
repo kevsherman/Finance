@@ -6,7 +6,7 @@ require("../includes/config.php");
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         //What stock are they selling?
-        $stock = $_POST["symbol"];
+        $stock = strtoupper($_POST["symbol"]);
 
         //How many shares are they selling?
         $amt = $_POST["amt"];
@@ -15,8 +15,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $shares = query("SELECT shares FROM stocks WHERE id = ? AND symbol = ?", $_SESSION["id"], $_POST["symbol"]);
 
         //if amount they want to sell is more than they have, apologize
-        if($shares <= $amt){
-            render("apologize.php", "sorry, you dont have that many shares");
+        if($shares[0]["shares"] < $amt){
+            apologize ("You only have " . $shares[0]["shares"] . " shares of " . $stock . ". You cannot sell more shares than you own.");
         }
 
         //What is the sale value? (current stock price * amount of shares to sell)
