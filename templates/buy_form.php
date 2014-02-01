@@ -1,8 +1,10 @@
 <div>
-    <form name="buy" action="../public/buy.php" method="post">
-        Enter the symbol of the stock to buy<input name="symbol" type="text">
-        Enter amount to buy<input name="amt" type="text">
-        <input type="submit">
+    <form role="form" name="buy" action="../public/buy.php" method="post">
+        <div class="form-group">
+        Stock:              <input name="symbol" type="text" class="form-control">
+        Order Number: <input name="amt" type="text" class="form-control">
+                                <button type="submit" class="btn btn-default">Submit</button>
+        </div>
     </form>
 </div>
 

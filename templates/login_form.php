@@ -12,5 +12,5 @@
     </fieldset>
 </form>
 <div>
-    or <a href="register.php">register</a> for an account
+    or <a href="register.php">register</a> 
 </div>

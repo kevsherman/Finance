@@ -32,8 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //find new stock total
         $newshares = query("SELECT shares FROM stocks WHERE id = ? AND symbol =?", $_SESSION["id"], $_POST["symbol"]);
 
+
         //if new stock total == 0, delete the row
-            if($newshares == 0){
+            if($newshares[0]["shares"] == 0){
                 query("DELETE FROM stocks WHERE id = ? AND symbol = ?", $_SESSION["id"], $_POST["symbol"]);
             }
 

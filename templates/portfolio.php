@@ -44,14 +44,3 @@
 
 </ul>
 
-<div>
-    <a href="quote.php">Seach Stocks by Symbol </a>
-<div>
-    <a href="logout.php">Log Out</a>
-</div>
-<div>
-    <a href="sell.php">Sell Stocks</a>
-</div>
-<div>
-    <a href="buy.php">Buy Stocks</a>
-</div>
