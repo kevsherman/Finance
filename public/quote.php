@@ -9,6 +9,12 @@
         if($_SERVER ["REQUEST_METHOD"] == "POST"){
     
            $quote = lookup($_POST["symbol"]);
+
+            //check if valid symbol
+            if($quote == false){
+                apologize("You have entered an invalid symbol");
+            }
+
            render("displayquote.php", ["quote" => $quote]);
         }
 
